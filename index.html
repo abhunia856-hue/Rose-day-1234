@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffdee9, #fff1f5);
+  color: #5a1a2e;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.message {
+  background: rgba(255,255,255,0.6);
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+footer {
+  padding: 20px;
+}
+
+.typing {
+  font-size: 1.4rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #e63946;
+  width: 0;
+  animation: typing 4s steps(40,end) forwards, blink .8s infinite;
+  margin: 20px auto;
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.falling-rose {
+  position: fixed;
+  top: -50px;
+  font-size: 26px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+  z-index: 999;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <h1>Happy Rose Day, utuni 🌹</h1>
+  <div class="typing">I love you Tuni ❤️</div>
+  <p>Just like a rose, you add color, beauty, and meaning to my life, utuni.</p>
+</header>
+
+<section class="gallery">
+  <img src="rose1.jpg">
+  <img src="rose2.jpg">
+  <img src="rose3.jpg">
+  <img src="rose4.jpg">
+  <img src="rose5.jpg">
+  <img src="rose6.jpg">
+
+</section>
+
+<section class="message">
+  <p>
+    On this Rose Day, Tuni, I want you to know how deeply special you are to me.
+    Every moment with you feels like a rose blooming in my heart 🌹.
+    Your smile, your warmth, and your love make my world brighter every single day.
+    Thank you for being my happiness, my peace, and my forever.
+  </p>
+</section>
+
+<footer>
+  <p>With all my love,<br>your Tona ❤️</p>
+</footer>
+
+<script>
+const roses = ["🌹","🌸","🌷","💐","🥀","🏵️","🌺","🌼","🪷","🪻","🌹"];
+
+function createRose() {
+  const rose = document.createElement('div');
+  rose.className = 'falling-rose';
+  rose.innerText = roses[Math.floor(Math.random() * roses.length)];
+  rose.style.left = Math.random() * 100 + 'vw';
+  rose.style.animationDuration = (Math.random() * 3 + 3) + 's';
+  document.body.appendChild(rose);
+  setTimeout(() => rose.remove(), 7000);
+}
+
+setInterval(createRose, 300);
+</script>
+
+</body>
+</html>
